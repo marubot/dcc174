@@ -1,7 +1,14 @@
+using Estagios.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Database");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DataContext>(options =>
+        options.UseSqlServer(connectionString));
+
 
 var app = builder.Build();
 
