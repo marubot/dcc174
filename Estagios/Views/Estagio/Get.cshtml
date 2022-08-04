@@ -1,7 +1,7 @@
 ﻿@model  Estagios.Models.Estagio
 
 @{
-    ViewData["Title"] = "Visualização de estágios";
+    ViewData["Title"] = "Visualização de estágio";
 }
 
 <h1>Discente</h1>
@@ -40,37 +40,38 @@
 
             <div class="col-md-6">
                 <span>Tipo de estágio</span>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.TipoEstagio)</span>
             </div>
 
             <div class="col-md-6">
                 <span>Tipo de concedente</span>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.TipoConcedente)</span>
+
             </div>
 
             <div class="col-md-6">
                 <span>Tipo de remuneração</span>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.TipoRemuneracao)</span>
             </div>
 
             <div class="col-md-6">
                 <label for="agenteIntegracao">Agente de Integração</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.AgenteIntegracao)</span>
             </div>
 
             <div class="col-md-6">
                 <label for="startDate">Data de início de estágio</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.DataInicioEstagio)</span>
             </div>
 
             <div class="col-md-6">
                 <label for="endDate">Data de termino de estágio</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.DataTerminoEstagio)</span>
             </div>
 
             <div class="col-12">
                 <h2>Situação do estágio</h2>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.SituacaoEstagio)</span>
             </div>
         </div>
     </div>
@@ -80,45 +81,44 @@
             <div class="col-12">
                 <h2>Dados do discente</h2>
                 <label for="nomeDiscente">Nome</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.NomeDiscente)</span>
             </div>
 
             <div class="col-12">
                 <label for="cpf">CPF</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.CPF)</span>
             </div>
 
             <div class="col-12">
                 <label for="endereco">Endereço</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Endereco)</span>
             </div>
             <div class="col-12">
                 <label for="dataNascimento">Data de nascimento</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.DataNascimento)</span>
             </div>
             <div class="col-12">
                 <label for="matricula">Matrícula</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Matricula)</span>
             </div>
             <div class="col-12">
                 <label for="Curso">Curso</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Curso)</span>
             </div>
             <div class="col-12">
                 <span>Formando</span>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Formando)</span>
             </div>
 
             <div class="col-12">
                 <label for="ira">IRA</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Ira)</span>
             </div>
 
             <div class="col-12">
                 <label for="email">Email</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Email)</span>
             </div>
-
         </div>
     </div>
 
@@ -127,17 +127,17 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="setorEstagio">Setor do estágio</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Setor)</span>
             </div>
 
             <div class="col-12">
                 <label for="nomeEmpresa">Nome da empresa</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.NomeEmpresa)</span>
             </div>
 
             <div class="col-12">
                 <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.NomeResponsavelEmpresa)</span>
             </div>
 
         </div>
@@ -148,22 +148,22 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="nomeSupervisor">Nome do supervisor</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.NomeSupervisor)</span>
             </div>
 
             <div class="col-12">
                 <label for="funcaoSupervisor">Função</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.FuncaoSupervisor)</span>
             </div>
 
             <div class="col-12">
                 <label for="formacaoSupervisor">Formação profissional</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.FormacaoSupervisor)</span>
             </div>
 
             <div class="col-12">
                 <label for="email">Email</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.EmailSupervisor)</span>
             </div>
 
         </div>
@@ -174,12 +174,12 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="disciplina">Disciplina</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Disciplina)</span>
             </div>
 
             <div class="col-12">
                 <label for="nomeOrientador">Nome</label>
-                <span></span>
+                <span>@Html.DisplayFor(model => model.Orientador)</span>
             </div>
         </div>
     </div>
@@ -188,7 +188,7 @@
         <h2>Dados das atividades</h2>
         <div class="row g-3">
             <div class="col-12">
-                <textarea></textarea>
+                <span>@Html.DisplayFor(model => model.AtividadeText)</span>
             </div>
         </div>
     </div>
@@ -199,7 +199,7 @@
                 <h2>Anexar relatório</h2>
             </div>
             <div class="col-12">
-                <span></span>
+                <span>Relatório aqui</span>
             </div>
         </div>
     </div>
@@ -207,3 +207,4 @@
     <button>Salvar rascunho</button>
     <button>Salvar</button>
 </div>
+

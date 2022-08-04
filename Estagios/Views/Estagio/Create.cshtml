@@ -1,11 +1,8 @@
-﻿@model  Estagios.Models.Estagio
-
-@{
-    ViewData["Title"] = "Visualização de estágios";
+﻿@{
+    ViewData["Title"] = "Cadastro de estágio";
 }
 
 <h1>Discente</h1>
-
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="estagio-tab" data-bs-toggle="tab" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
@@ -32,7 +29,6 @@
         <button class="nav-link" id="documentos-tab" data-bs-toggle="tab" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">Documentos em anexo</button>
     </li>
 </ul>
-
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="estagio" role="tabpanel" aria-labelledby="estagio-tab">
         <div class="row g-3">
@@ -40,37 +36,51 @@
 
             <div class="col-md-6">
                 <span>Tipo de estágio</span>
-                <span></span>
+                <input type="radio" />
+                <label for="tipoEstagio">Obrigatório</label>
+                <input type="radio" />
+                <label for="tipoEstagio">Não obrigatório</label>
             </div>
 
             <div class="col-md-6">
                 <span>Tipo de concedente</span>
-                <span></span>
+                <input type="radio" />
+                <label for="tipoConcedente">Interno</label>
+                <input type="radio" />
+                <label for="tipoConcedente">Externo</label>
             </div>
 
             <div class="col-md-6">
                 <span>Tipo de remuneração</span>
-                <span></span>
+                <input type="radio" />
+                <label for="tipoRemuneracao">Remunerado</label>
+                <input type="radio" />
+                <label for="tipoRemuneracao">Não remunerado</label>
             </div>
 
             <div class="col-md-6">
                 <label for="agenteIntegracao">Agente de Integração</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-md-6">
                 <label for="startDate">Data de início de estágio</label>
-                <span></span>
+                <input id="startDate" class="form-control" type="date" />
             </div>
 
             <div class="col-md-6">
                 <label for="endDate">Data de termino de estágio</label>
-                <span></span>
+                <input id="endDate" class="form-control" type="date" />
             </div>
 
             <div class="col-12">
                 <h2>Situação do estágio</h2>
-                <span></span>
+                <input type="radio" />
+                <label for="situacaoEstagio">Em andamento</label>
+                <input type="radio" />
+                <label for="situacaoEstagio">Finalizado</label>
+                <input type="radio" />
+                <label for="situacaoEstagio">Cancelado</label>
             </div>
         </div>
     </div>
@@ -80,43 +90,46 @@
             <div class="col-12">
                 <h2>Dados do discente</h2>
                 <label for="nomeDiscente">Nome</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="cpf">CPF</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="endereco">Endereço</label>
-                <span></span>
+                <input type="text" />
             </div>
             <div class="col-12">
                 <label for="dataNascimento">Data de nascimento</label>
-                <span></span>
+                <input id="dataNascimento" class="form-control" type="date" />
             </div>
             <div class="col-12">
                 <label for="matricula">Matrícula</label>
-                <span></span>
+                <input type="text" />
             </div>
             <div class="col-12">
                 <label for="Curso">Curso</label>
-                <span></span>
+                <input type="email" />
             </div>
             <div class="col-12">
                 <span>Formando</span>
-                <span></span>
+                <label for="formando">Sim</label>
+                <input type="radio" />
+                <label for="formando">Não</label>
+                <input type="radio" />
             </div>
 
             <div class="col-12">
                 <label for="ira">IRA</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="email">Email</label>
-                <span></span>
+                <input type="text" />
             </div>
 
         </div>
@@ -127,17 +140,17 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="setorEstagio">Setor do estágio</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="nomeEmpresa">Nome da empresa</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
-                <span></span>
+                <input type="text" />
             </div>
 
         </div>
@@ -148,22 +161,22 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="nomeSupervisor">Nome do supervisor</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="funcaoSupervisor">Função</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="formacaoSupervisor">Formação profissional</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="email">Email</label>
-                <span></span>
+                <input type="email" />
             </div>
 
         </div>
@@ -174,12 +187,12 @@
         <div class="row g-3">
             <div class="col-12">
                 <label for="disciplina">Disciplina</label>
-                <span></span>
+                <input type="text" />
             </div>
 
             <div class="col-12">
                 <label for="nomeOrientador">Nome</label>
-                <span></span>
+                <input type="text" />
             </div>
         </div>
     </div>
@@ -199,7 +212,7 @@
                 <h2>Anexar relatório</h2>
             </div>
             <div class="col-12">
-                <span></span>
+                <input type="file" accept="application/pdf" />
             </div>
         </div>
     </div>
