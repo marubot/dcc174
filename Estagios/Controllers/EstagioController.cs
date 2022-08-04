@@ -1,6 +1,4 @@
-﻿using Estagios.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Estagios.Controllers
 {
