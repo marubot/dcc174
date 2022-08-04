@@ -16,25 +16,26 @@ namespace Estagios.Controllers
         }
 
         // GET All Estagios /Estagio/Index
-        public IActionResult Index()
+        public ActionResult<IEnumerable<Estagio>> Index()
         {
-            return View();
+            var estagios = _context.Estagios.ToList();
+            
+            if(estagios == null)
+                return NotFound();
+            
+            return View(estagios);
         }
 
         // Get one Estagio /Estagio/Get/{id}
         public IActionResult Get(int id)
         {
             if(id == default(int))
-            {
                 return NotFound();
-            }
 
             var estagio = _context.Estagios.FirstOrDefault(e => e.Id == id);
 
             if(estagio == null)
-            {
                 return NotFound();
-            }
 
             return View(estagio);
         }

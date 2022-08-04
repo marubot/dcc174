@@ -1,10 +1,10 @@
-﻿@model  Estagios.Models.Estagio
+﻿@model IEnumerable<Estagios.Models.Estagio>
 
 @{
     ViewData["Title"] = "Visualização de estágios";
 }
 
-<h1>Discente</h1>
+<h1>Lista de estágios (Coordenador)</h1>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -35,175 +35,182 @@
 
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="estagio" role="tabpanel" aria-labelledby="estagio-tab">
-        <div class="row g-3">
-            <h2>Dados do estágio</h2>
-
-            <div class="col-md-6">
-                <span>Tipo de estágio</span>
-                <span></span>
-            </div>
-
-            <div class="col-md-6">
-                <span>Tipo de concedente</span>
-                <span></span>
-            </div>
-
-            <div class="col-md-6">
-                <span>Tipo de remuneração</span>
-                <span></span>
-            </div>
-
-            <div class="col-md-6">
-                <label for="agenteIntegracao">Agente de Integração</label>
-                <span></span>
-            </div>
-
-            <div class="col-md-6">
-                <label for="startDate">Data de início de estágio</label>
-                <span></span>
-            </div>
-
-            <div class="col-md-6">
-                <label for="endDate">Data de termino de estágio</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <h2>Situação do estágio</h2>
-                <span></span>
-            </div>
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Tipo de estágio</th>
+                    <th scope="col">Tipo de concedente</th>
+                    <th scope="col">Tipo de remuneração</th>
+                    <th scope="col">Agente de integração</th>
+                    <th scope="col">Data de início do estágio</th>
+                    <th scope="col">Data de término do estágio</th>
+                    <th scope="col">Situação do estágio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.TipoEstagio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoConcedente)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TipoRemuneracao)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AgenteIntegracao)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DataInicioEstagio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DataTerminoEstagio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SituacaoEstagio)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="discente" role="tabpanel" aria-labelledby="discente-tab">
-        <div class="row g-3">
-            <div class="col-12">
-                <h2>Dados do discente</h2>
-                <label for="nomeDiscente">Nome</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="cpf">CPF</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="endereco">Endereço</label>
-                <span></span>
-            </div>
-            <div class="col-12">
-                <label for="dataNascimento">Data de nascimento</label>
-                <span></span>
-            </div>
-            <div class="col-12">
-                <label for="matricula">Matrícula</label>
-                <span></span>
-            </div>
-            <div class="col-12">
-                <label for="Curso">Curso</label>
-                <span></span>
-            </div>
-            <div class="col-12">
-                <span>Formando</span>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="ira">IRA</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="email">Email</label>
-                <span></span>
-            </div>
-
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Data de nascimento</th>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Formando</th>
+                    <th scope="col">IRA</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.NomeDiscente)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CPF)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Endereco)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Curso)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Formando)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Ira)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="concedente" role="tabpanel" aria-labelledby="concedente-tab">
-        <h2>Dados da empresa concedente</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="setorEstagio">Setor do estágio</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="nomeEmpresa">Nome da empresa</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
-                <span></span>
-            </div>
-
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Setor do estágio</th>
+                    <th scope="col">Nome da empresa</th>
+                    <th scope="col">Nome do responsável pela empresa</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Setor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NomeEmpresa)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NomeResponsavelEmpresa)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="supervisor" role="tabpanel" aria-labelledby="supervisor-tab">
-        <h2>Dados do supervisor de estágio</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="nomeSupervisor">Nome do supervisor</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="funcaoSupervisor">Função</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="formacaoSupervisor">Formação profissional</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="email">Email</label>
-                <span></span>
-            </div>
-
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Função</th>
+                    <th scope="col">Formação profissional</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.NomeSupervisor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FuncaoSupervisor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FormacaoSupervisor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EmailSupervisor)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="orientador" role="tabpanel" aria-labelledby="orientador-tab">
-        <h2>Dados do orientador</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="disciplina">Disciplina</label>
-                <span></span>
-            </div>
-
-            <div class="col-12">
-                <label for="nomeOrientador">Nome</label>
-                <span></span>
-            </div>
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Disciplina</th>
+                    <th scope="col">Orientador</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Disciplina)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Orientador)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="atividades" role="tabpanel" aria-labelledby="atividades-tab">
-        <h2>Dados das atividades</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <textarea></textarea>
-            </div>
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Atividades realizadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => item.AtividadeText)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
-        <div class="row g-3">
-            <div class="col-12">
-                <h2>Anexar relatório</h2>
-            </div>
-            <div class="col-12">
-                <span></span>
-            </div>
-        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Relatório</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <th>Relatorio</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-
-    <button>Salvar rascunho</button>
-    <button>Salvar</button>
 </div>
