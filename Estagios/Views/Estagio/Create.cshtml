@@ -1,222 +1,226 @@
-﻿@{
+﻿@model Estagios.Models.Estagio
+
+@{
     ViewData["Title"] = "Cadastro de estágio";
 }
 
 <h1>Discente</h1>
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="estagio-tab" data-bs-toggle="tab" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="discente-tab" data-bs-toggle="tab" data-bs-target="#discente" type="button" role="tab" aria-controls="discente" aria-selected="false">Discente</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="concedente-tab" data-bs-toggle="tab" data-bs-target="#concedente" type="button" role="tab" aria-controls="concedente" aria-selected="false">Concedente</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="supervisor-tab" data-bs-toggle="tab" data-bs-target="#supervisor" type="button" role="tab" aria-controls="supervisor" aria-selected="false">Supervisor</button>
-    </li>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="orientador-tab" data-bs-toggle="tab" data-bs-target="#orientador" type="button" role="tab" aria-controls="orientador" aria-selected="false">Orientador</button>
-    </li>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="atividades-tab" data-bs-toggle="tab" data-bs-target="#atividades" type="button" role="tab" aria-controls="atividades" aria-selected="false">Atividades</button>
-    </li>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="documentos-tab" data-bs-toggle="tab" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">Documentos em anexo</button>
-    </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="estagio" role="tabpanel" aria-labelledby="estagio-tab">
-        <div class="row g-3">
-            <h2>Dados do estágio</h2>
+<form asp-action="Create">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="estagio-tab" data-bs-toggle="tab" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="discente-tab" data-bs-toggle="tab" data-bs-target="#discente" type="button" role="tab" aria-controls="discente" aria-selected="false">Discente</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="concedente-tab" data-bs-toggle="tab" data-bs-target="#concedente" type="button" role="tab" aria-controls="concedente" aria-selected="false">Concedente</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="supervisor-tab" data-bs-toggle="tab" data-bs-target="#supervisor" type="button" role="tab" aria-controls="supervisor" aria-selected="false">Supervisor</button>
+        </li>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="orientador-tab" data-bs-toggle="tab" data-bs-target="#orientador" type="button" role="tab" aria-controls="orientador" aria-selected="false">Orientador</button>
+        </li>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="atividades-tab" data-bs-toggle="tab" data-bs-target="#atividades" type="button" role="tab" aria-controls="atividades" aria-selected="false">Atividades</button>
+        </li>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="documentos-tab" data-bs-toggle="tab" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">Documentos em anexo</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="estagio" role="tabpanel" aria-labelledby="estagio-tab">
+            <div class="row g-3">
+                <h2>Dados do estágio</h2>
 
-            <div class="col-md-6">
-                <span>Tipo de estágio</span>
-                <input type="radio" />
-                <label for="tipoEstagio">Obrigatório</label>
-                <input type="radio" />
-                <label for="tipoEstagio">Não obrigatório</label>
-            </div>
+                <div class="col-md-6">
+                    <span>Tipo de estágio</span>
+                    <input value="A" asp-for="TipoEstagio" type="radio" />
+                    <label class="radio-inline" for="tipoEstagio">Obrigatório</label>
+                    <input value="B" asp-for="TipoEstagio" type="radio" />
+                    <label class="radio-inline" for="tipoEstagio">Não obrigatório</label>
+                </div>
 
-            <div class="col-md-6">
-                <span>Tipo de concedente</span>
-                <input type="radio" />
-                <label for="tipoConcedente">Interno</label>
-                <input type="radio" />
-                <label for="tipoConcedente">Externo</label>
-            </div>
+                <div class="col-md-6">
+                    <span>Tipo de concedente</span>
+                    <input value="A" asp-for="TipoConcedente" type="radio" />
+                    <label class="radio-inline" for="tipoConcedente">Interno</label>
+                    <input value="B" asp-for="TipoConcedente" type="radio" />
+                    <label class="radio-inline" for="tipoConcedente">Externo</label>
+                </div>
 
-            <div class="col-md-6">
-                <span>Tipo de remuneração</span>
-                <input type="radio" />
-                <label for="tipoRemuneracao">Remunerado</label>
-                <input type="radio" />
-                <label for="tipoRemuneracao">Não remunerado</label>
-            </div>
+                <div class="col-md-6">
+                    <span>Tipo de remuneração</span>
+                    <input value="A" asp-for="TipoRemuneracao" type="radio" />
+                    <label class="radio-inline" for="tipoRemuneracao">Remunerado</label>
+                    <input value="B" asp-for="TipoRemuneracao" type="radio" />
+                    <label class="radio-inline" for="tipoRemuneracao">Não remunerado</label>
+                </div>
 
-            <div class="col-md-6">
-                <label for="agenteIntegracao">Agente de Integração</label>
-                <input type="text" />
-            </div>
+                <div class="col-md-6">
+                    <label for="agenteIntegracao">Agente de Integração</label>
+                    <input asp-for="AgenteIntegracao" type="text" />
+                </div>
 
-            <div class="col-md-6">
-                <label for="startDate">Data de início de estágio</label>
-                <input id="startDate" class="form-control" type="date" />
-            </div>
+                <div class="col-md-6">
+                    <label for="startDate">Data de início de estágio</label>
+                    <input asp-for="DataInicioEstagio" id="startDate" class="form-control" type="date" />
+                </div>
 
-            <div class="col-md-6">
-                <label for="endDate">Data de termino de estágio</label>
-                <input id="endDate" class="form-control" type="date" />
-            </div>
+                <div class="col-md-6">
+                    <label for="endDate">Data de termino de estágio</label>
+                    <input asp-for="DataTerminoEstagio" id="endDate" class="form-control" type="date" />
+                </div>
 
-            <div class="col-12">
-                <h2>Situação do estágio</h2>
-                <input type="radio" />
-                <label for="situacaoEstagio">Em andamento</label>
-                <input type="radio" />
-                <label for="situacaoEstagio">Finalizado</label>
-                <input type="radio" />
-                <label for="situacaoEstagio">Cancelado</label>
+                <div class="col-12">
+                    <h2>Situação do estágio</h2>
+                    <input value="A" asp-for="TipoRemuneracao" type="radio" />
+                    <label for="situacaoEstagio">Em andamento</label>
+                    <input value="B" asp-for="TipoRemuneracao" type="radio" />
+                    <label for="situacaoEstagio">Finalizado</label>
+                    <input value="C" asp-for="TipoRemuneracao" type="radio" />
+                    <label for="situacaoEstagio">Cancelado</label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="tab-pane fade" id="discente" role="tabpanel" aria-labelledby="discente-tab">
-        <div class="row g-3">
-            <div class="col-12">
-                <h2>Dados do discente</h2>
-                <label for="nomeDiscente">Nome</label>
-                <input type="text" />
-            </div>
+        <div class="tab-pane fade" id="discente" role="tabpanel" aria-labelledby="discente-tab">
+            <div class="row g-3">
+                <div class="col-12">
+                    <h2>Dados do discente</h2>
+                    <label for="nomeDiscente">Nome</label>
+                    <input asp-for="NomeDiscente" type="text" />
+                </div>
 
-            <div class="col-12">
-                <label for="cpf">CPF</label>
-                <input type="text" />
-            </div>
+                <div class="col-12">
+                    <label for="cpf">CPF</label>
+                    <input asp-for="CPF" type="text" />
+                </div>
 
-            <div class="col-12">
-                <label for="endereco">Endereço</label>
-                <input type="text" />
-            </div>
-            <div class="col-12">
-                <label for="dataNascimento">Data de nascimento</label>
-                <input id="dataNascimento" class="form-control" type="date" />
-            </div>
-            <div class="col-12">
-                <label for="matricula">Matrícula</label>
-                <input type="text" />
-            </div>
-            <div class="col-12">
-                <label for="Curso">Curso</label>
-                <input type="email" />
-            </div>
-            <div class="col-12">
-                <span>Formando</span>
-                <label for="formando">Sim</label>
-                <input type="radio" />
-                <label for="formando">Não</label>
-                <input type="radio" />
-            </div>
+                <div class="col-12">
+                    <label for="endereco">Endereço</label>
+                    <input asp-for="Endereco" type="text" />
+                </div>
+                <div class="col-12">
+                    <label for="dataNascimento">Data de nascimento</label>
+                    <input asp-for="DataNascimento" id="dataNascimento" class="form-control" type="date" />
+                </div>
+                <div class="col-12">
+                    <label for="matricula">Matrícula</label>
+                    <input asp-for="Matricula" type="text" />
+                </div>
+                <div class="col-12">
+                    <label for="Curso">Curso</label>
+                    <input asp-for="Curso" type="text" />
+                </div>
+                <div class="col-12">
+                    <span>Formando</span>
+                    <label for="formando">Sim</label>
+                    <input value="A" asp-for="Formando" type="radio" />
+                    <label for="formando">Não</label>
+                    <input value="B" asp-for="Formando" type="radio" />
+                </div>
 
-            <div class="col-12">
-                <label for="ira">IRA</label>
-                <input type="text" />
-            </div>
+                <div class="col-12">
+                    <label for="ira">IRA</label>
+                    <input asp-for="Ira" type="text" />
+                </div>
 
-            <div class="col-12">
-                <label for="email">Email</label>
-                <input type="text" />
-            </div>
+                <div class="col-12">
+                    <label for="email">Email</label>
+                    <input asp-for="Email" type="email" />
+                </div>
 
-        </div>
-    </div>
-
-    <div class="tab-pane fade" id="concedente" role="tabpanel" aria-labelledby="concedente-tab">
-        <h2>Dados da empresa concedente</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="setorEstagio">Setor do estágio</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="nomeEmpresa">Nome da empresa</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
-                <input type="text" />
-            </div>
-
-        </div>
-    </div>
-
-    <div class="tab-pane fade" id="supervisor" role="tabpanel" aria-labelledby="supervisor-tab">
-        <h2>Dados do supervisor de estágio</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="nomeSupervisor">Nome do supervisor</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="funcaoSupervisor">Função</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="formacaoSupervisor">Formação profissional</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="email">Email</label>
-                <input type="email" />
-            </div>
-
-        </div>
-    </div>
-
-    <div class="tab-pane fade" id="orientador" role="tabpanel" aria-labelledby="orientador-tab">
-        <h2>Dados do orientador</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="disciplina">Disciplina</label>
-                <input type="text" />
-            </div>
-
-            <div class="col-12">
-                <label for="nomeOrientador">Nome</label>
-                <input type="text" />
             </div>
         </div>
-    </div>
 
-    <div class="tab-pane fade" id="atividades" role="tabpanel" aria-labelledby="atividades-tab">
-        <h2>Dados das atividades</h2>
-        <div class="row g-3">
-            <div class="col-12">
-                <textarea></textarea>
+        <div class="tab-pane fade" id="concedente" role="tabpanel" aria-labelledby="concedente-tab">
+            <h2>Dados da empresa concedente</h2>
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="setorEstagio">Setor do estágio</label>
+                    <input asp-for="Setor" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="nomeEmpresa">Nome da empresa</label>
+                    <input asp-for="NomeEmpresa" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
+                    <input asp-for="NomeResponsavelEmpresa" type="text" />
+                </div>
+
             </div>
         </div>
-    </div>
 
-    <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
-        <div class="row g-3">
-            <div class="col-12">
-                <h2>Anexar relatório</h2>
-            </div>
-            <div class="col-12">
-                <input type="file" accept="application/pdf" />
+        <div class="tab-pane fade" id="supervisor" role="tabpanel" aria-labelledby="supervisor-tab">
+            <h2>Dados do supervisor de estágio</h2>
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="nomeSupervisor">Nome do supervisor</label>
+                    <input asp-for="NomeSupervisor" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="funcaoSupervisor">Função</label>
+                    <input asp-for="FuncaoSupervisor" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="formacaoSupervisor">Formação profissional</label>
+                    <input asp-for="FormacaoSupervisor" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="email">Email</label>
+                    <input asp-for="EmailSupervisor" type="email" />
+                </div>
+
             </div>
         </div>
-    </div>
 
-    <button>Salvar rascunho</button>
-    <button>Salvar</button>
-</div>
+        <div class="tab-pane fade" id="orientador" role="tabpanel" aria-labelledby="orientador-tab">
+            <h2>Dados do orientador</h2>
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="disciplina">Disciplina</label>
+                    <input asp-for="Disciplina" type="text" />
+                </div>
+
+                <div class="col-12">
+                    <label for="nomeOrientador">Nome</label>
+                    <input asp-for="Orientador" type="text" />
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="atividades" role="tabpanel" aria-labelledby="atividades-tab">
+            <h2>Dados das atividades</h2>
+            <div class="row g-3">
+                <div class="col-12">
+                    <textarea asp-for="AtividadeText"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
+            <div class="row g-3">
+                <div class="col-12">
+                    <h2>Anexar relatório</h2>
+                </div>
+                <div class="col-12">
+                    <input type="file" accept="application/pdf" />
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-outline-primary">Salvar rascunho</button>
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+</form>

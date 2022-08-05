@@ -40,10 +40,23 @@ namespace Estagios.Controllers
             return View(estagio);
         }
 
-        // Post new Estagio /Estagio/Create
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        // Post new Estagio /Estagio/Create
+        public IActionResult Create(Estagio estagio)
+        {
+            if (estagio == null)
+                throw new ArgumentNullException(nameof(estagio));
+
+                _context.Estagios.Add(estagio);
+
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
         }
     }
 }
