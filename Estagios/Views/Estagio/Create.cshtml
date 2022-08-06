@@ -39,25 +39,25 @@
 
                 <div class="col-md-6">
                     <span>Tipo de estágio</span>
-                    <input value="A" asp-for="TipoEstagio" type="radio" />
+                    <input value="Obrigatorio" asp-for="TipoEstagio" type="radio" />
                     <label class="radio-inline" for="tipoEstagio">Obrigatório</label>
-                    <input value="B" asp-for="TipoEstagio" type="radio" />
+                    <input value="NaoObrigatorio" asp-for="TipoEstagio" type="radio" />
                     <label class="radio-inline" for="tipoEstagio">Não obrigatório</label>
                 </div>
 
                 <div class="col-md-6">
                     <span>Tipo de concedente</span>
-                    <input value="A" asp-for="TipoConcedente" type="radio" />
+                    <input value="Interno" asp-for="TipoConcedente" type="radio" />
                     <label class="radio-inline" for="tipoConcedente">Interno</label>
-                    <input value="B" asp-for="TipoConcedente" type="radio" />
+                    <input value="Externo" asp-for="TipoConcedente" type="radio" />
                     <label class="radio-inline" for="tipoConcedente">Externo</label>
                 </div>
 
                 <div class="col-md-6">
                     <span>Tipo de remuneração</span>
-                    <input value="A" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="Remunerado" asp-for="TipoRemuneracao" type="radio" />
                     <label class="radio-inline" for="tipoRemuneracao">Remunerado</label>
-                    <input value="B" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="NaoRemunerado" asp-for="TipoRemuneracao" type="radio" />
                     <label class="radio-inline" for="tipoRemuneracao">Não remunerado</label>
                 </div>
 
@@ -78,11 +78,11 @@
 
                 <div class="col-12">
                     <h2>Situação do estágio</h2>
-                    <input value="A" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="EmAndamento" asp-for="TipoRemuneracao" type="radio" />
                     <label for="situacaoEstagio">Em andamento</label>
-                    <input value="B" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="Finalizado" asp-for="TipoRemuneracao" type="radio" />
                     <label for="situacaoEstagio">Finalizado</label>
-                    <input value="C" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="Cancelado" asp-for="TipoRemuneracao" type="radio" />
                     <label for="situacaoEstagio">Cancelado</label>
                 </div>
             </div>
@@ -120,9 +120,9 @@
                 <div class="col-12">
                     <span>Formando</span>
                     <label for="formando">Sim</label>
-                    <input value="A" asp-for="Formando" type="radio" />
+                    <input value="Formando" asp-for="Formando" type="radio" />
                     <label for="formando">Não</label>
-                    <input value="B" asp-for="Formando" type="radio" />
+                    <input value="Não" asp-for="Formando" type="radio" />
                 </div>
 
                 <div class="col-12">
