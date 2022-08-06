@@ -19,27 +19,28 @@ namespace Estagios.Controllers
         public ActionResult<IEnumerable<Estagio>> Index()
         {
             var estagios = _context.Estagios.ToList();
-            
-            if(estagios == null)
+
+            if (estagios == null)
                 return NotFound();
-            
+
             return View(estagios);
         }
 
         // Get one Estagio /Estagio/Get/{id}
         public IActionResult Get(int id)
         {
-            if(id == default(int))
+            if (id == default(int))
                 return NotFound();
 
             var estagio = _context.Estagios.FirstOrDefault(e => e.Id == id);
 
-            if(estagio == null)
+            if (estagio == null)
                 return NotFound();
 
             return View(estagio);
         }
 
+        // GET /Estagio/Create view
         public IActionResult Create()
         {
             return View();
@@ -52,11 +53,11 @@ namespace Estagios.Controllers
             if (estagio == null)
                 throw new ArgumentNullException(nameof(estagio));
 
-                _context.Estagios.Add(estagio);
+            _context.Estagios.Add(estagio);
 
-                _context.SaveChanges();
+            _context.SaveChanges();
 
-                return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
     }
 }
