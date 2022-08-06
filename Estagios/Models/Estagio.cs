@@ -8,30 +8,30 @@ namespace Estagios.Models
         public int Id { get; set; }
 
         #region Estágio
-        public bool TipoEstagio{ get; set; }
+        public TipoEstagioEnum TipoEstagio { get; set; }
 
-        public bool TipoConcedente { get; set; }
-        
-        public bool TipoRemuneracao { get; set; }
+        public TipoConcedenteEnum TipoConcedente { get; set; }
+
+        public TipoRemuneracaoEnum TipoRemuneracao { get; set; }
 
         public string? AgenteIntegracao { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime DataInicioEstagio { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime DataTerminoEstagio { get; set; }
-        
-        public SituacaoEnum SituacaoEstagio { get; set; }
+
+        public SituacaoEstagioEnum SituacaoEstagio { get; set; }
         #endregion
 
         #region Discente
         public string? NomeDiscente { get; set; }
 
         public string? CPF { get; set; }
-        
+
         public string? Endereco { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
 
@@ -39,10 +39,10 @@ namespace Estagios.Models
 
         public string? Curso { get; set; }
 
-        public bool Formando { get; set; }
+        public FormandoEnum Formando { get; set; }
 
         public string? Ira { get; set; }
-        
+
         public string? Email { get; set; }
         #endregion
 
@@ -50,7 +50,7 @@ namespace Estagios.Models
         public string? Setor { get; set; }
 
         public string? NomeEmpresa { get; set; }
-        
+
         public string? NomeResponsavelEmpresa { get; set; }
         #endregion
 
@@ -60,7 +60,7 @@ namespace Estagios.Models
         public string? FuncaoSupervisor { get; set; }
 
         public string? FormacaoSupervisor { get; set; }
-        
+
         public string? EmailSupervisor { get; set; }
         #endregion
 
