@@ -9,5 +9,7 @@ namespace Estagios.Data
         { }
 
         public DbSet<Estagio> Estagios { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -4,8 +4,8 @@
     ViewData["Title"] = "Cadastro de estágio";
 }
 
-<h1>Discente</h1>
-<form asp-action="Create">
+<h1>Cadastro de estágio</h1>
+<form asp-action="Create" asp-controller="Account" method="post">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="estagio-tab" data-bs-toggle="tab" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
@@ -63,26 +63,26 @@
 
                 <div class="col-md-6">
                     <label for="agenteIntegracao">Agente de Integração</label>
-                    <input asp-for="AgenteIntegracao" type="text" />
+                    <input class="form-control" asp-for="AgenteIntegracao" type="text" />
                 </div>
 
                 <div class="col-md-6">
                     <label for="startDate">Data de início de estágio</label>
-                    <input asp-for="DataInicioEstagio" id="startDate" class="form-control" type="date" />
+                    <input class="form-control" asp-for="DataInicioEstagio" id="startDate" class="form-control" type="date" />
                 </div>
 
                 <div class="col-md-6">
                     <label for="endDate">Data de termino de estágio</label>
-                    <input asp-for="DataTerminoEstagio" id="endDate" class="form-control" type="date" />
+                    <input class="form-control" asp-for="DataTerminoEstagio" id="endDate" class="form-control" type="date" />
                 </div>
 
                 <div class="col-12">
                     <h2>Situação do estágio</h2>
-                    <input value="EmAndamento" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="EmAndamento" asp-for="SituacaoEstagio" type="radio" />
                     <label for="situacaoEstagio">Em andamento</label>
-                    <input value="Finalizado" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="Finalizado" asp-for="SituacaoEstagio" type="radio" />
                     <label for="situacaoEstagio">Finalizado</label>
-                    <input value="Cancelado" asp-for="TipoRemuneracao" type="radio" />
+                    <input value="Cancelado" asp-for="SituacaoEstagio" type="radio" />
                     <label for="situacaoEstagio">Cancelado</label>
                 </div>
             </div>
@@ -93,29 +93,29 @@
                 <div class="col-12">
                     <h2>Dados do discente</h2>
                     <label for="nomeDiscente">Nome</label>
-                    <input asp-for="NomeDiscente" type="text" />
+                    <input class="form-control" asp-for="NomeDiscente" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="cpf">CPF</label>
-                    <input asp-for="CPF" type="text" />
+                    <input class="form-control" asp-for="CPF" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="endereco">Endereço</label>
-                    <input asp-for="Endereco" type="text" />
+                    <input class="form-control" asp-for="Endereco" type="text" />
                 </div>
                 <div class="col-12">
                     <label for="dataNascimento">Data de nascimento</label>
-                    <input asp-for="DataNascimento" id="dataNascimento" class="form-control" type="date" />
+                    <input class="form-control" asp-for="DataNascimento" id="dataNascimento" class="form-control" type="date" />
                 </div>
                 <div class="col-12">
                     <label for="matricula">Matrícula</label>
-                    <input asp-for="Matricula" type="text" />
+                    <input class="form-control" asp-for="Matricula" type="text" />
                 </div>
                 <div class="col-12">
                     <label for="Curso">Curso</label>
-                    <input asp-for="Curso" type="text" />
+                    <input class="form-control" asp-for="Curso" type="text" />
                 </div>
                 <div class="col-12">
                     <span>Formando</span>
@@ -127,12 +127,12 @@
 
                 <div class="col-12">
                     <label for="ira">IRA</label>
-                    <input asp-for="Ira" type="text" />
+                    <input class="form-control" asp-for="Ira" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="email">Email</label>
-                    <input asp-for="Email" type="email" />
+                    <input class="form-control" asp-for="Email" type="email" />
                 </div>
 
             </div>
@@ -143,17 +143,17 @@
             <div class="row g-3">
                 <div class="col-12">
                     <label for="setorEstagio">Setor do estágio</label>
-                    <input asp-for="Setor" type="text" />
+                    <input class="form-control" asp-for="Setor" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="nomeEmpresa">Nome da empresa</label>
-                    <input asp-for="NomeEmpresa" type="text" />
+                    <input class="form-control" asp-for="NomeEmpresa" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="nomeResponsavelEmpresa">Nome do responsável pela empresa</label>
-                    <input asp-for="NomeResponsavelEmpresa" type="text" />
+                    <input class="form-control" asp-for="NomeResponsavelEmpresa" type="text" />
                 </div>
 
             </div>
@@ -164,22 +164,22 @@
             <div class="row g-3">
                 <div class="col-12">
                     <label for="nomeSupervisor">Nome do supervisor</label>
-                    <input asp-for="NomeSupervisor" type="text" />
+                    <input class="form-control" asp-for="NomeSupervisor" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="funcaoSupervisor">Função</label>
-                    <input asp-for="FuncaoSupervisor" type="text" />
+                    <input class="form-control" asp-for="FuncaoSupervisor" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="formacaoSupervisor">Formação profissional</label>
-                    <input asp-for="FormacaoSupervisor" type="text" />
+                    <input class="form-control" asp-for="FormacaoSupervisor" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="email">Email</label>
-                    <input asp-for="EmailSupervisor" type="email" />
+                    <input class="form-control" asp-for="EmailSupervisor" type="email" />
                 </div>
 
             </div>
@@ -190,12 +190,12 @@
             <div class="row g-3">
                 <div class="col-12">
                     <label for="disciplina">Disciplina</label>
-                    <input asp-for="Disciplina" type="text" />
+                    <input class="form-control" asp-for="Disciplina" type="text" />
                 </div>
 
                 <div class="col-12">
                     <label for="nomeOrientador">Nome</label>
-                    <input asp-for="Orientador" type="text" />
+                    <input class="form-control" asp-for="Orientador" type="text" />
                 </div>
             </div>
         </div>
