@@ -6,9 +6,9 @@ var connectionString = builder.Configuration.GetConnectionString("Database");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContext<DataContext>(options =>
         options.UseSqlServer(connectionString));
-
 
 var app = builder.Build();
 
@@ -27,6 +27,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 name: "default",
-pattern: "{controller=Estagio}/{action=Index}/{id?}");
+pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
