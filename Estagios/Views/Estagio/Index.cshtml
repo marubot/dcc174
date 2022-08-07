@@ -4,7 +4,7 @@
     ViewData["Title"] = "Visualização de estágios";
 }
 
-<h1>Lista de estágios</h1>
+<h1>Meus estágios</h1>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -39,6 +39,7 @@
             <thead>
                 <tr>
                     <th scope="col">Id</th>
+                    <th scope="col">Visualizar estágio</th>
                     <th scope="col">Tipo de estágio</th>
                     <th scope="col">Tipo de concedente</th>
                     <th scope="col">Tipo de remuneração</th>
@@ -52,7 +53,14 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                        <th scope="row">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </th>
+                        <td>
+                            <a asp-area="" asp-controller="Estagio" asp-action="Get" asp-route-id="@item.Id">
+                                Ver
+                            </a>
+                        </td>
                         <td>@Html.DisplayFor(modelItem => item.TipoEstagio)</td>
                         <td>@Html.DisplayFor(modelItem => item.TipoConcedente)</td>
                         <td>@Html.DisplayFor(modelItem => item.TipoRemuneracao)</td>
