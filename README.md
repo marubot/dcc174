@@ -24,8 +24,9 @@ durante a parte 2 do trabalho da disciplina de DCC174 - Interação Humano Compu
 3. Abra o arquivo appsettings.json do projeto, que se encontra em Estagios/Estagios
 4. Pegue a connection string do banco que acabou de criar e cole-a na linha 9, substituindo o valor existente.
 5. Abra o terminal
-6. Execute o comando
+6. Execute os comandos
 ```sh
+cd Estagios/Estagios
 dotnet ef database update
 ```
 
