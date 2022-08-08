@@ -1,8 +1,9 @@
 ﻿@model Estagios.Dtos.UserDto
 
-<body class="text-center">
-    <main class="form-signin w-100 m-auto">
-        <form asp-action="Login">
+<div class="container-main">
+    <img class="logo" src="Images/Logo_da_UFJF.png" />
+    <form asp-action="Login">
+        <div class="container-form">
             <h1 class="h3 mb-3 fw-normal">Login</h1>
 
             <div class="form-floating">
@@ -14,8 +15,6 @@
                 <label for="floatingPassword">Senha</label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
-        </form>
-    </main>
-</body>
-
+        </div>
+    </form>
+</div>

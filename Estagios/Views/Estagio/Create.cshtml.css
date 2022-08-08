@@ -1,11 +1,41 @@
 ﻿.form-control {
     display: block;
-    width: 100%;
+    width: auto;
     padding: .375rem .75rem;
     border: 1px solid #ced4da;
     line-height: 1.5;
     color: #212529;
     font-size: 1rem;
     font-weight: 400;
+}
 
+.form-cad {
+    display: flex;
+}
 
+.container-radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-button {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.container-tabs {
+    margin-top: 50px;
+    width: 70vw;
+    height: 50vh;
+}
+
+.title {
+    margin-top: 60px;
+}
+
+.content {
+    width: inherit;
+    height: inherit;
+}
