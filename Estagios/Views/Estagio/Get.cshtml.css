@@ -1,1 +1,24 @@
-﻿
+﻿.container-tabs {
+    margin-top: 50px;
+    width: 70vw;
+    height: 50vh;
+}
+
+.title {
+    margin-top: 60px;
+}
+
+.content {
+    width: inherit;
+    height: inherit;
+}
+
+label {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.estagio-text {
+    display: flex;
+    flex-direction: column;
+}

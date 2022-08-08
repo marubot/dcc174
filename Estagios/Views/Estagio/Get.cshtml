@@ -4,51 +4,53 @@
     ViewData["Title"] = "Visualização de estágio";
 }
 
-<h1>Discente</h1>
+<h1 class="title">Discente</h1>
 
-<div class="d-flex align-items-start">
+<div class="d-flex align-items-start container-tabs">
     <div class="nav flex-column nav-pills me-3" id="myTab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="estagio-tab" data-bs-toggle="pill" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
-            <button class="nav-link" id="discente-tab" data-bs-toggle="pill" data-bs-target="#discente" type="button" role="tab" aria-controls="discente" aria-selected="false">Discente</button>
-            <button class="nav-link" id="concedente-tab" data-bs-toggle="pill" data-bs-target="#concedente" type="button" role="tab" aria-controls="concedente" aria-selected="false">Concedente</button>
-            <button class="nav-link" id="supervisor-tab" data-bs-toggle="pill" data-bs-target="#supervisor" type="button" role="tab" aria-controls="supervisor" aria-selected="false">Supervisor</button>
-            <button class="nav-link" id="orientador-tab" data-bs-toggle="pill" data-bs-target="#orientador" type="button" role="tab" aria-controls="orientador" aria-selected="false">Orientador</button>
-            <button class="nav-link" id="atividades-tab" data-bs-toggle="pill" data-bs-target="#atividades" type="button" role="tab" aria-controls="atividades" aria-selected="false">Atividades</button>
-            <button class="nav-link" id="documentos-tab" data-bs-toggle="pill" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">Documentos em anexo</button>
+        <button class="nav-link active" id="estagio-tab" data-bs-toggle="pill" data-bs-target="#estagio" type="button" role="tab" aria-controls="estagio" aria-selected="true">Estágio</button>
+        <button class="nav-link" id="discente-tab" data-bs-toggle="pill" data-bs-target="#discente" type="button" role="tab" aria-controls="discente" aria-selected="false">Discente</button>
+        <button class="nav-link" id="concedente-tab" data-bs-toggle="pill" data-bs-target="#concedente" type="button" role="tab" aria-controls="concedente" aria-selected="false">Concedente</button>
+        <button class="nav-link" id="supervisor-tab" data-bs-toggle="pill" data-bs-target="#supervisor" type="button" role="tab" aria-controls="supervisor" aria-selected="false">Supervisor</button>
+        <button class="nav-link" id="orientador-tab" data-bs-toggle="pill" data-bs-target="#orientador" type="button" role="tab" aria-controls="orientador" aria-selected="false">Orientador</button>
+        <button class="nav-link" id="atividades-tab" data-bs-toggle="pill" data-bs-target="#atividades" type="button" role="tab" aria-controls="atividades" aria-selected="false">Atividades</button>
+        <button class="nav-link" id="documentos-tab" data-bs-toggle="pill" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">Documentos em anexo</button>
     </div>
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content content" id="myTabContent">
         <div class="tab-pane fade show active" id="estagio" role="tabpanel" aria-labelledby="estagio-tab">
             <div class="row g-3">
                 <h2>Dados do estágio</h2>
 
-                <div class="col-md-6">
-                    <span>Tipo de estágio</span>
+                <div class="col-auto estagio-text">
+                    <label>Tipo de estágio</label>
                     <span>@Html.DisplayFor(model => model.TipoEstagio)</span>
                 </div>
 
-                <div class="col-md-6">
-                    <span>Tipo de concedente</span>
+                <div class="col-auto estagio-text">
+                    <label>Tipo de concedente</label>
                     <span>@Html.DisplayFor(model => model.TipoConcedente)</span>
-
                 </div>
+                <div class="w-100"></div>
 
-                <div class="col-md-6">
-                    <span>Tipo de remuneração</span>
+                <div class="col-auto estagio-text">
+                    <label>Tipo de remuneração</label>
                     <span>@Html.DisplayFor(model => model.TipoRemuneracao)</span>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-auto estagio-text">
                     <label for="agenteIntegracao">Agente de Integração</label>
                     <span>@Html.DisplayFor(model => model.AgenteIntegracao)</span>
                 </div>
 
-                <div class="col-md-6">
+                <div class="w-100"></div>
+
+                <div class="col-auto estagio-text">
                     <label for="startDate">Data de início de estágio</label>
                     <span>@Html.DisplayFor(model => model.DataInicioEstagio)</span>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-auto estagio-text">
                     <label for="endDate">Data de termino de estágio</label>
                     <span>@Html.DisplayFor(model => model.DataTerminoEstagio)</span>
                 </div>
@@ -62,42 +64,48 @@
 
         <div class="tab-pane fade" id="discente" role="tabpanel" aria-labelledby="discente-tab">
             <div class="row g-3">
-                <div class="col-12">
-                    <h2>Dados do discente</h2>
+                <h2>Dados do discente</h2>
+                <div class="col-auto">
                     <label for="nomeDiscente">Nome</label>
                     <span>@Html.DisplayFor(model => model.NomeDiscente)</span>
                 </div>
 
-                <div class="col-12">
+                <div class="col-auto">
                     <label for="cpf">CPF</label>
                     <span>@Html.DisplayFor(model => model.CPF)</span>
                 </div>
+                <div class="w-100"></div>
 
-                <div class="col-12">
+                <div class="col-auto">
                     <label for="endereco">Endereço</label>
                     <span>@Html.DisplayFor(model => model.Endereco)</span>
                 </div>
-                <div class="col-12">
+                <div class="col-auto">
                     <label for="dataNascimento">Data de nascimento</label>
                     <span>@Html.DisplayFor(model => model.DataNascimento)</span>
                 </div>
-                <div class="col-12">
+
+                <div class="w-100"></div>
+
+                <div class="col-auto">
                     <label for="matricula">Matrícula</label>
                     <span>@Html.DisplayFor(model => model.Matricula)</span>
                 </div>
-                <div class="col-12">
+                <div class="col-auto">
                     <label for="Curso">Curso</label>
                     <span>@Html.DisplayFor(model => model.Curso)</span>
                 </div>
-                <div class="col-12">
-                    <span>Formando</span>
+                <div class="col-auto">
+                    <label>Formando</label>
                     <span>@Html.DisplayFor(model => model.Formando)</span>
                 </div>
 
-                <div class="col-12">
+                <div class="col-auto">
                     <label for="ira">IRA</label>
                     <span>@Html.DisplayFor(model => model.Ira)</span>
                 </div>
+
+                <div class="w-100"></div>
 
                 <div class="col-12">
                     <label for="email">Email</label>
@@ -107,8 +115,8 @@
         </div>
 
         <div class="tab-pane fade" id="concedente" role="tabpanel" aria-labelledby="concedente-tab">
-            <h2>Dados da empresa concedente</h2>
             <div class="row g-3">
+                <h2>Dados da empresa concedente</h2>
                 <div class="col-12">
                     <label for="setorEstagio">Setor do estágio</label>
                     <span>@Html.DisplayFor(model => model.Setor)</span>
@@ -128,8 +136,8 @@
         </div>
 
         <div class="tab-pane fade" id="supervisor" role="tabpanel" aria-labelledby="supervisor-tab">
-            <h2>Dados do supervisor de estágio</h2>
             <div class="row g-3">
+                <h2>Dados do supervisor de estágio</h2>
                 <div class="col-12">
                     <label for="nomeSupervisor">Nome do supervisor</label>
                     <span>@Html.DisplayFor(model => model.NomeSupervisor)</span>
@@ -154,8 +162,8 @@
         </div>
 
         <div class="tab-pane fade" id="orientador" role="tabpanel" aria-labelledby="orientador-tab">
-            <h2>Dados do orientador</h2>
             <div class="row g-3">
+                <h2>Dados do orientador</h2>
                 <div class="col-12">
                     <label for="disciplina">Disciplina</label>
                     <span>@Html.DisplayFor(model => model.Disciplina)</span>
@@ -169,8 +177,8 @@
         </div>
 
         <div class="tab-pane fade" id="atividades" role="tabpanel" aria-labelledby="atividades-tab">
-            <h2>Dados das atividades</h2>
             <div class="row g-3">
+                <h2>Dados das atividades</h2>
                 <div class="col-12">
                     <span>@Html.DisplayFor(model => model.AtividadeText)</span>
                 </div>
@@ -179,9 +187,7 @@
 
         <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
             <div class="row g-3">
-                <div class="col-12">
-                    <h2>Anexar relatório</h2>
-                </div>
+                <h2>Anexar relatório</h2>
                 <div class="col-12">
                     <span>Relatório aqui</span>
                 </div>
