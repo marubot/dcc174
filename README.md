@@ -42,7 +42,7 @@ cd Estagios/Estagios/Data/Queries
 ```sh
 cd Estagios/Estagios
 ```
-4. Utilize o comando abaixo para rodar o projeto
+3. Utilize o comando abaixo para rodar o projeto
 ```sh
 dotnet run
 ```
