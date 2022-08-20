@@ -26,21 +26,23 @@ durante a parte 2 do trabalho da disciplina de DCC174 - Interação Humano Compu
 5. Abra o terminal
 6. Execute os comandos
 ```sh
-cd Estagios/Estagios
+cd <nome-da-pasta>
+dotnet restore --ignore-failed-sources
+cd /Estagios
 dotnet ef database update
 ```
 
 ## 2 - Como registrar um usuário para login
 1. Execute, no banco criado, as queries que se encontram no diretório abaixo
 ```sh
-cd Estagios/Estagios/Data/Queries
+cd ~/Estagios/Data/Queries
 ```
 
 ## 3 - Como rodar o projeto
 1. Abra o terminal no diretório raiz onde o repo foi clonado
 2. Digite:
 ```sh
-cd Estagios/Estagios
+cd ~/Estagios
 ```
 3. Utilize o comando abaixo para rodar o projeto
 ```sh
